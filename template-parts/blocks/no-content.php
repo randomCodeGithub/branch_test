@@ -1,0 +1,1 @@
+<p><?php _e( 'Saturs šim blokam nav pieejams.', TD ); ?></p>

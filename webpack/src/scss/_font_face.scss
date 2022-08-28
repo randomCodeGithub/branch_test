@@ -1,0 +1,295 @@
+/**
+ * Regular
+ */
+
+ @font-face {
+  font-family: 'PFEncoreSansPro';
+  src: url('../fonts/PFEncoreSansPro-Regular.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PFEncoreSansPro';
+  src: url('../fonts/PFEncoreSansPro-Italic.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PFEncoreSansPro';
+  src: url('../fonts/PFEncoreSansPro-Bold.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PFEncoreSansPro';
+  src: url('../fonts/PFEncoreSansPro-BoldItalic.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/**
+ * Book
+ */
+
+@font-face {
+  font-family: 'PFEncoreSansPro-Book';
+  src: url('../fonts/PFEncoreSansPro-Book.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-Book.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PFEncoreSansPro-Book';
+  src: url('../fonts/PFEncoreSansPro-BookItalic.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-BookItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/**
+ * Black
+ */
+
+@font-face {
+  font-family: 'PFEncoreSansPro-Black';
+  src: url('../fonts/PFEncoreSansPro-Black.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-Black.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PFEncoreSansPro-Black';
+  src: url('../fonts/PFEncoreSansPro-BlackItalic.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-BlackItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/**
+ * Ultra black
+ */
+
+@font-face {
+  font-family: 'PFEncoreSansPro-UltraBlack';
+  src: url('../fonts/PFEncoreSansPro-UltraBlack.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-UltraBlack.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PFEncoreSansPro-UltraBlack';
+  src: url('../fonts/PFEncoreSansPro-UltraBlackItalic.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-UltraBlackItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/**
+ * Medium
+ */
+
+@font-face {
+  font-family: 'PFEncoreSansPro-Medium';
+  src: url('../fonts/PFEncoreSansPro-Medium.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PFEncoreSansPro-Medium';
+  src: url('../fonts/PFEncoreSansPro-MediumItalic.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-MediumItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/**
+ * Light
+ */
+
+@font-face {
+  font-family: 'PFEncoreSansPro-Light';
+  src: url('../fonts/PFEncoreSansPro-Light.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-Light.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PFEncoreSansPro-Light';
+  src: url('../fonts/PFEncoreSansPro-LightItalic.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-LightItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/**
+ * Hairline
+ */
+
+@font-face {
+  font-family: 'PFEncoreSansPro-Hairline';
+  src: url('../fonts/PFEncoreSansPro-Hairline.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-Hairline.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PFEncoreSansPro-HairlineItalic';
+  src: url('../fonts/PFEncoreSansPro-HairlineItalic.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-HairlineItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/**
+ * Thin
+ */
+
+@font-face {
+  font-family: 'PFEncoreSansPro-Thin';
+  src: url('../fonts/PFEncoreSansPro-Thin.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-Thin.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PFEncoreSansPro-ThinItalic';
+  src: url('../fonts/PFEncoreSansPro-ThinItalic.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-ThinItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/**
+ * Extra thin
+ */
+
+@font-face {
+  font-family: 'PFEncoreSansPro-ExtraThin';
+  src: url('../fonts/PFEncoreSansPro-ExtraThin.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-ExtraThin.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PFEncoreSansPro-ExtraThinItalic';
+  src: url('../fonts/PFEncoreSansPro-ExtraThinItalic.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-ExtraThinItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/**
+ * Ultra thin
+ */
+
+@font-face {
+  font-family: 'PFEncoreSansPro-UltraThin';
+  src: url('../fonts/PFEncoreSansPro-UltraThin.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-UltraThin.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PFEncoreSansPro-UltraThinItalic';
+  src: url('../fonts/PFEncoreSansPro-UltraThinItalic.woff') format('woff'),
+       url('../fonts/PFEncoreSansPro-UltraThinItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/**
+ * Icon
+ */
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?coe4ii');
+  src:  url('../fonts/icomoon.eot?coe4ii#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?coe4ii') format('truetype'),
+    url('../fonts/icomoon.woff?coe4ii') format('woff'),
+    url('../fonts/icomoon.svg?coe4ii#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.ic {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ic-twitter:before {
+  content: "\e906";
+}
+.ic-youtube:before {
+  content: "\e903";
+}
+.ic-linkedin:before {
+  content: "\e902";
+}
+.ic-facebook:before {
+  content: "\e904";
+}
+.ic-arrow-left:before {
+  content: "\e905";
+}
+.ic-arrow-right:before {
+  content: "\e900";
+}
+.ic-chat:before {
+  content: "\e901";
+}
+.ic-minus:before {
+  content: "\e907";
+}
+.ic-checkmark:before {
+  content: "\e908";
+}

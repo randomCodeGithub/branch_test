@@ -1,0 +1,60 @@
+// Theme variables
+// Layout
+$site_width: 1340px;
+
+// Size between columns
+$gutters: (
+	xl: 20px,
+	lg: 20px,
+	md: 20px,
+	sm: 20px,
+	xs: 20px
+);
+
+// Typography
+$c_default: #000;
+$c_primary: #E5702A;
+$c_secondary: #dadbdf;
+$c_error: #ee1144;
+$c_success: #26a65b;
+
+// Greys
+$c_grey_d: #7c7c7c;
+$c_grey_l: #f2f2f2;
+
+$f_default: 'PFEncoreSansPro', sans-serif;
+$f_special: $f_default;
+$f_book: 'PFEncoreSansPro-Book', sans-serif;
+$f_black: 'PFEncoreSansPro-Black', sans-serif;
+$f_ultrablack: 'PFEncoreSansPro-UltraBlack', sans-serif;
+$f_medium: 'PFEncoreSansPro-Medium', sans-serif;
+$f_light: 'PFEncoreSansPro-Light', sans-serif;
+
+// Responsive setup
+$breakpoints: (
+	xl: 1360px,
+	lg: 1100px,
+	md: 640px,
+	sm: 480px,
+	xs: 0
+);
+
+$breakpoint_xl: map-get($breakpoints, xl) - 1;
+$breakpoint_lg: map-get($breakpoints, lg) - 1;
+$breakpoint_md: map-get($breakpoints, md) - 1;
+$breakpoint_sm: map-get($breakpoints, sm) - 1;
+
+// Framework
+@import 'bootstrap_grid';
+@import 'framework/framework_layout';
+@import 'framework/framework_page';
+@import 'framework/framework_print';
+@import 'framework/framework_visual';
+
+// Theme
+@import 'mixins';
+@import 'font_face';
+@import 'typography';
+@import 'header_footer';
+@import 'site_content';
+@import 'blocks';
