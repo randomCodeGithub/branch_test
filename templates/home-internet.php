@@ -20,9 +20,18 @@ get_header(); ?>
                 <figure class="internet-packs__decor"></figure>
 
                 <div class="on-top">
+                    <div class="items-success h4 text-center d-none"><?php _e( 'Наши услуги доступны по данному адресу, пожалуйста выберите желаемую скорость интернета', 'csc-telecom' ); ?></div>
+                    <div class="items-error h4 text-center d-none">
+                        <div>
+                            <?php _e( 'К сожалению по-этому адресу мы ещё не предоставляем нашу услугу Домашний интернет', 'csc-telecom' ); ?>
+                        </div>
+
+                        <button class="btn btn-default size-1 js-items-error-ok"><?php _e( 'Ok', 'csc-telecom' ); ?></button>
+                    </div>
+
                     <div class="row gutters-sm">
                         <?php $i = 0; while ( have_rows( 'internet_packs', 'option' ) ): the_row(); ?>
-                            <div class="ip-wrap col-lg-4 col-6">
+                            <div class="ip-item ip-wrap col-lg-4 col-6" data-speed="<?php the_sub_field( 'speed_id' ); ?>">
                                 <article class="ip">
                                     <?php if ( get_sub_field( 'name' ) ): ?>
                                         <p class="ip__name"><?php the_sub_field( 'name' ); ?></p>
@@ -63,7 +72,7 @@ get_header(); ?>
                                 <div class="relative">
                                     <figure class="check-address__icon svg-ic svg-ic--search"></figure>
 
-                                    <input class="input" type="text" name="address" placeholder="<?php _e( 'адрес', 'csc-telecom' ); ?>">
+                                    <input class="input" type="text" name="address" id="address" placeholder="<?php _e( 'адрес', 'csc-telecom' ); ?>">
                                 </div>
                             </div>
 
@@ -135,6 +144,42 @@ get_header(); ?>
 <script>
     jQuery( document ).ready( function( $ ) {
         /**
+         * Places autocomplete.
+         */
+        <?php //if ( !isset( $_GET['dev'] ) ): ?>
+        function places_autocomplete() {
+
+            var input = document.getElementById( 'address' );
+            var options = {
+                componentRestrictions: { country: "ee" },
+                fields: ["address_components", "geometry", "icon", "name"],
+                strictBounds: false,
+            };
+
+            var autocomplete = new google.maps.places.Autocomplete(input, options);
+
+        }
+        places_autocomplete();
+
+        /**
+         * Reset items after failed address.
+         */
+        $( '.js-items-error-ok' ).on( 'click', function() {
+            $( '.items-error' ).addClass( 'd-none' );
+            $( '.ip-item' ).show();
+            $( '#address' ).val( '' );
+        } );
+        <?php //endif; ?>
+        /**
+         * Enter triggers test address.
+         */
+        $( 'input[name="address"]' ).keypress( function( e ) {
+            if ( e.keyCode == 13 ) {
+                $( '.js-test' ).click();
+            }
+        } );
+
+        /**
          * Test address click handler.
          */
         $( '.js-test' ).click( function() {
@@ -153,6 +198,8 @@ get_header(); ?>
                 $input.addClass( 'error' );
                 return;
             }
+
+            address = address.split( ',' )[0];
 
             // Post data.
             var data = {
@@ -176,31 +223,50 @@ get_header(); ?>
                 success: function( res ) {
                     $response.empty();
 
+                    console.log(res);
+
+                    <?php //if ( !isset( $_GET['dev'] ) ): ?>
+                    $( '.items-success, .items-error' ).addClass( 'd-none' );
+                    $( '.ip-item' ).hide();
+
                     if ( res.success ) {
-                        var $row = $( '<div class="row"/>' );
-
                         $.each( res.data.services, function( i, service ) {
-                            var $col     = $( '<div class="service-wrap col-lg-6"/>' );
-                            var $service = $( '<div class="service"/>' );
-
-                            $service.append( '<p>' + service.group[lang] + '</p>' );
-                            $service.append( '<p class="ip__name">' + service.name[lang] + '</p>' );
-                            $service.append( '<div class="ip__price"><p class="ip__price-1">€ ' + service.price + '</p><p class="ip__price-2"><?php _e( '/месяц', 'csc-telecom' ); ?></p></div>' );
-
-                            if ( service.speed.down.indexOf( 'M' ) !== -1 ) {
-                                $service.append( '<p class="ip__speed">' + service.speed.down.split( 'M' )[0] + ' <?php _e( 'Мбит/с', 'csc-telecom' ); ?></p>' );
-                            } else {
-                                $service.append( '<p class="ip__speed">' + service.speed.down + '</p>' );
-                            }
-
-                            $service.appendTo( $col );
-                            $col.appendTo( $row );
+                            $( '.ip-item[data-speed="' + service.speed.down + '"]' ).show();
                         } );
 
-                        $row.appendTo( $response );
+                        $( '.items-success' ).removeClass( 'd-none' );
+                        $( document ).scrollTop( $( '.items-success' ).offset().top );
                     } else {
-                        $response.html( '<p>' + res.data.message + '</p>' )                        
+                        $( '.items-error' ).removeClass( 'd-none' );
+                        $( document ).scrollTop( $( '.items-error' ).offset().top );
                     }
+                    <?php //else: ?>
+                    // if ( res.success ) {
+                    //     var $row = $( '<div class="row"/>' );
+
+                    //     $.each( res.data.services, function( i, service ) {
+                    //         var $col     = $( '<div class="service-wrap col-lg-6"/>' );
+                    //         var $service = $( '<div class="service"/>' );
+
+                    //         $service.append( '<p>' + service.group[lang] + '</p>' );
+                    //         $service.append( '<p class="ip__name">' + service.name[lang] + '</p>' );
+                    //         $service.append( '<div class="ip__price"><p class="ip__price-1">€ ' + service.price + '</p><p class="ip__price-2"><?php _e( '/месяц', 'csc-telecom' ); ?></p></div>' );
+
+                    //         if ( service.speed.down.indexOf( 'M' ) !== -1 ) {
+                    //             $service.append( '<p class="ip__speed">' + service.speed.down.split( 'M' )[0] + ' <?php _e( 'Мбит/с', 'csc-telecom' ); ?></p>' );
+                    //         } else {
+                    //             $service.append( '<p class="ip__speed">' + service.speed.down + '</p>' );
+                    //         }
+
+                    //         $service.appendTo( $col );
+                    //         $col.appendTo( $row );
+                    //     } );
+
+                    //     $row.appendTo( $response );
+                    // } else {
+                    //     $response.html( '<p>' + res.data.message + '</p>' )                        
+                    // }
+                    <?php //endif; ?>
                 },
 
                 error: function( jqXHR, textStatus, errorThrown ) {
@@ -212,7 +278,19 @@ get_header(); ?>
 </script>
 
 <style>
+.items-success,
+.items-error {
+    margin-bottom: 40px;
+    padding: 20px;
+    color: #000;
+    border: 6px solid #e5702a;
+}
 
+.items-error div { margin-bottom: 10px; }
+
+@media ( min-width: 1100px ) {
+    .internet-packs { min-height: 600px; }
+}
 </style>
 
 <?php get_footer(); ?>
